@@ -1,0 +1,72 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.36.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           AritmeticExpression
+version:        0.1.0.0
+homepage:       https://github.com/DMichelR/AritmeticExpression#readme
+bug-reports:    https://github.com/DMichelR/AritmeticExpression/issues
+author:         Diego Michel Roca
+maintainer:     aa6132788@gmail.com
+copyright:      2024 Diego Michel Roca
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/DMichelR/AritmeticExpression
+
+library
+  exposed-modules:
+      ArithmeticExpression
+      ExpressionEvaluator
+      Lib
+      Parser
+  other-modules:
+      Paths_AritmeticExpression
+  autogen-modules:
+      Paths_AritmeticExpression
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , parsec
+  default-language: Haskell2010
+
+executable AritmeticExpression-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_AritmeticExpression
+  autogen-modules:
+      Paths_AritmeticExpression
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      AritmeticExpression
+    , base >=4.7 && <5
+    , parsec
+  default-language: Haskell2010
+
+test-suite AritmeticExpression-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_AritmeticExpression
+  autogen-modules:
+      Paths_AritmeticExpression
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      AritmeticExpression
+    , base >=4.7 && <5
+    , parsec
+  default-language: Haskell2010
